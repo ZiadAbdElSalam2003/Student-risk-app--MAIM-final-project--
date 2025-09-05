@@ -1,0 +1,226 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Predict Student Math Risk</h1>
+
+<form method="post" class="grid-form">
+
+    <!-- sex -->
+    <div>
+        <label>Sex:</label>
+        <select name="sex" required>
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+        </select>
+    </div>
+
+    <!-- address -->
+    <div>
+        <label>Address:</label>
+        <select name="address" required>
+            <option value="1">Urban (U)</option>
+            <option value="0">Rural (R)</option>
+        </select>
+    </div>
+
+    <!-- Medu -->
+    <div>
+        <label>Mother Education:</label>
+        <select name="Medu" required>
+            <option value="0">None</option>
+            <option value="1">Primary</option>
+            <option value="2">5th–9th grade</option>
+            <option value="3">Secondary</option>
+            <option value="4">Higher</option>
+        </select>
+    </div>
+
+    <!-- Fedu -->
+    <div>
+        <label>Father Education:</label>
+        <select name="Fedu" required>
+            <option value="0">None</option>
+            <option value="1">Primary</option>
+            <option value="2">5th–9th grade</option>
+            <option value="3">Secondary</option>
+            <option value="4">Higher</option>
+        </select>
+    </div>
+
+    <!-- Mjob -->
+    <div>
+        <label>Mother Job:</label>
+        <select name="Mjob" required>
+            <option value="teacher">Teacher</option>
+            <option value="health">Health</option>
+            <option value="services">Services</option>
+            <option value="at_home">At Home</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+
+    <!-- reason -->
+    <div>
+        <label>Reason:</label>
+        <select name="reason" required>
+            <option value="home">Home</option>
+            <option value="reputation">Reputation</option>
+            <option value="course">Course</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+
+    <!-- studytime -->
+    <div>
+        <label>Study Time:</label>
+        <select name="studytime" required>
+            <option value="1">&lt; 2 hours</option>
+            <option value="2">2–5 hours</option>
+            <option value="3">5–10 hours</option>
+            <option value="4">&gt; 10 hours</option>
+        </select>
+    </div>
+
+    <!-- binary yes/no example -->
+    <div>
+        <label>School Support:</label>
+        <select name="schoolsup" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Extra Paid Classes:</label>
+        <select name="paid" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Higher Education:</label>
+        <select name="higher" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Internet:</label>
+        <select name="internet" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+    </div>
+
+    <!-- numeric example -->
+    <div>
+        <label>Family Relationship:</label>
+        <input type="number" name="famrel" min="1" max="5" required>
+    </div>
+
+    <div>
+        <label>Free Time:</label>
+        <input type="number" name="freetime" min="1" max="5" required>
+    </div>
+
+    <div>
+        <label>Going Out:</label>
+        <input type="number" name="goout" min="1" max="5" required>
+    </div>
+
+    <div>
+        <label>Dalc:</label>
+        <input type="number" name="Dalc" min="1" max="5" required>
+    </div>
+
+    <div>
+        <label>Walc:</label>
+        <input type="number" name="Walc" min="1" max="5" required>
+    </div>
+
+    <div>
+        <label>Health:</label>
+        <input type="number" name="health" min="1" max="5" required>
+    </div>
+
+    <div>
+        <label>G1:</label>
+        <input type="number" name="G1" min="0" max="20" required>
+    </div>
+
+    <div>
+        <label>G2:</label>
+        <input type="number" name="G2" min="0" max="20" required>
+    </div>
+
+    <!-- One-hot -->
+    <div>
+        <label>Mjob at home:</label>
+        <select name="Mjob_at_home" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Mjob health:</label>
+        <select name="Mjob_health" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Mjob teacher:</label>
+        <select name="Mjob_teacher" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Fjob teacher:</label>
+        <select name="Fjob_teacher" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Reason course:</label>
+        <select name="reason_course" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Reason other:</label>
+        <select name="reason_other" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Reason reputation:</label>
+        <select name="reason_reputation" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+    </div>
+
+    <!-- submit -->
+    <div style="grid-column: span 3; text-align:center;">
+        <button type="submit">Predict</button>
+    </div>
+</form>
+
+{% if prediction is not none %}
+    <h2>Prediction Result:</h2>
+    <p>{{ prediction }}</p>
+{% endif %}
+{% endblock %}
+

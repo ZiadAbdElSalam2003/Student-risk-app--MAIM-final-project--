@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div style="max-width: 900px; margin: auto; padding: 20px;">
+        <h1 style="text-align: center; color: #2c3e50;">Welcome to the Student Risk App</h1>
+        
+        <p style="font-size: 18px; text-align: left; line-height: 1.6;">
+            Welcome! I will help you predict:
+            <ul style="list-style: disc; margin-left: 40px; font-size: 17px;">
+                <li><strong>Student Math Risk</strong></li>
+                <li><strong>Student Portuguese Risk</strong></li>
+            </ul>
+            🔍 Predict students’ Final Grade Risk in Math and Portuguese.
+            To help educators and parents identify potential risks early and provide timely support. <br><br>
+            Also, I offer:
+            <ul style="list-style: disc; margin-left: 40px; font-size: 17px;">
+                <li><strong>Students and Parents Feedback Sentiment Analysis</strong></li>
+            </ul>
+            📝 Automatically analyze written feedback without manually reading it!
+        </p>
+
+        <hr style="margin: 40px 0;">
+
+        <h2 style="text-align: center; color: #34495e;">📊 Data Variables Used in Prediction Models</h2>
+
+        <div style="overflow-x: auto; margin-top: 20px;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+                <thead style="background-color: #ecf0f1;">
+                    <tr>
+                        <th style="border: 1px solid #bdc3c7; padding: 10px;">Variable Name</th>
+                        <th style="border: 1px solid #bdc3c7; padding: 10px;">Type</th>
+                        <th style="border: 1px solid #bdc3c7; padding: 10px;">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% set variables = [
+                        ('Sex', 'Binary', 'Sex (F or M)'),
+                        ('Address', 'Categorical', "Home address (U - urban, R - rural)"),
+                        ('Mother Education', 'Integer', "Mother's education (0 to 4)"),
+                        ('Father Education', 'Integer', "Father's education (0 to 4)"),
+                        ('Mother job', 'Categorical', "Mother's job (e.g., teacher, health)"),
+                        ('Reason', 'Categorical', "Reason for choosing school"),
+                        ('Study Time', 'Integer', "Weekly study time (1 to 4)"),
+                        ('School Support', 'Binary', "Extra educational support (yes/no)"),
+                        ('Extra Paid Classes', 'Binary', "Paid extra classes (yes/no)"),
+                        ('Higher Education', 'Binary', "Wants higher education (yes/no)"),
+                        ('Internet', 'Binary', "Internet access at home (yes/no)"),
+                        ('Family Relationship', 'Integer', "Family relationship quality (1 to 5)"),
+                        ('Free Time', 'Integer', "Free time after school (1 to 5)"),
+                        ('Going Out', 'Integer', "Going out with friends (1 to 5)"),
+                        ('Dalc', 'Integer', "Workday alcohol consumption (1 to 5)"),
+                        ('Walc', 'Integer', "Weekend alcohol consumption (1 to 5)"),
+                        ('Health', 'Integer', "Current health status (1 to 5)"),
+                        ('G1', 'Categorical', "First period grade (0 to 20)"),
+                        ('G2', 'Categorical', "Second period grade (0 to 20)"),
+                        ('Mjob_at_home', 'Binary', "Is the mother's job 'at home'? (yes or no)"),
+                        ('Mjob_health', 'Binary', "Is the mother's job in health sector? (yes or no)"),
+                        ('Mjob_teacher', 'Binary', "Is the mother's job a teacher? (yes or no)"),
+                        ('Fjob_teacher', 'Binary', "Is the father's job a teacher? (yes or no)"),
+                        ('Reason_course', 'Binary', "Did the student choose the school because of the course? (yes or no)"),
+                        ('Reason_other', 'Binary', "Did the student choose the school for other reasons? (yes or no)"),
+                        ('Reason_reputation', 'Binary', "Did the student choose the school for its reputation? (yes or no)")
+] %}
+                    {% for var, type, desc in variables %}
+                    <tr>
+                        <td style="border: 1px solid #bdc3c7; padding: 8px;">{{ var }}</td>
+                        <td style="border: 1px solid #bdc3c7; padding: 8px;">{{ type }}</td>
+                        <td style="border: 1px solid #bdc3c7; padding: 8px;">{{ desc }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
