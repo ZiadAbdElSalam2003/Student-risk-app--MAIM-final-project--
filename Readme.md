@@ -22,8 +22,8 @@ The interface is built with **Flask** for simple, user-friendly access by teache
 
 ## 🎥 Demo
 
-[![Watch the demo]([https://i.ytimg.com/vi/4Kk59-epa2M/hqdefault.jpg](https://img.youtube.com/vi/4Kk59-epa2M/maxresdefault.jpg
-))](https://youtu.be/4Kk59-epa2M)
+[![Watch the demo](https://img.youtube.com/vi/4Kk59-epa2M/maxresdefault.jpg)](https://youtu.be/4Kk59-epa2M)
+
 
 ---
 
