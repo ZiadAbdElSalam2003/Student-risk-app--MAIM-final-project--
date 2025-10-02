@@ -22,7 +22,7 @@ The interface is built with **Flask** for simple, user-friendly access by teache
 
 ## 🎥 Demo
 
-[![Watch the demo](https://www.canva.com/design/DAG0qsgCGx8/HxRH0zkTqnmTb65F2ByYXA/edit)](https://youtu.be/4Kk59-epa2M)
+[![Watch the demo](https://github.com/ZiadAbdElSalam2003/Student-risk-app--MAIM-final-project--/blob/79371c0a7084bdfaea9beee4c4e5b331f89373a3/assets/youtube%20image.png)](https://youtu.be/4Kk59-epa2M)
 
 
 
